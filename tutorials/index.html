@@ -343,15 +343,32 @@
 
 
 <h1 id="tutorial-de-uso">Tutorial de Uso</h1>
-<p>Para usar este módulo, puedes importar las funciones y definir tus límites:</p>
+<p>Para calcular la integral de una funcion, utilizaremos el siguiente ejemplo: </p>
+<div class="arithmatex">\[\int_{0}^{1}{x^2}dx\]</div>
+<p>Cuyo valor teórico exacto es <span class="arithmatex">\(\frac{1}{3}\approx0.33333\)</span>.</p>
 <p>```python
-import cuadrature as cq
-import numpy as np</p>
-<p>N = 50
-a = 0
-b = np.pi</p>
-<p>resultado = cq.calInt(N, a, b)
-print(f"El resultado es: {resultado}")</p>
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>def gaussxw(N):
+    x, w = np.polynomial.legendre.leggauss(N) # Calcular los pesos y los puntos
+    return x, w</p>
+<p>def gaussxwab(limInf, limSup, x, w):
+    return 0.5 * (limSup - limInf) * x + 0.5 * (limSup + limInf), 0.5 * (limSup - limInf) * w # Escalar los pesos y puntos al intervalo [limInf, limSup]</p>
+<p>def f(x):
+    return (x**2) # Obtener la funcion que se busca calcular</p>
+<p>def calInt(N, limInf, limSup):
+    x, w = gaussxw(N) # Obtener los pesos y puntos originales</p>
+<pre><code>xEsc, wEsc = gaussxwab(limInf, limSup, x, w) # Escalarlos al intervalo [0, 1]
+
+resultado = np.sum(wEsc * f(xEsc)) #
+
+return resultado
+</code></pre>
+<p>limInf = 0 
+limSup = 1
+numN = np.arange(1, 11)</p>
+<p>resInt = [calInt(n, limInf, limSup) for n in numN] </p>
+<p>print (f"El valor aproximado de la integral es: {resInt}")</p>
 
 
 
