@@ -346,8 +346,8 @@
 <p>Para calcular la integral de una funcion, utilizaremos el siguiente ejemplo: </p>
 <div class="arithmatex">\[\int_{0}^{1}{x^2}dx\]</div>
 <p>Cuyo valor teórico exacto es <span class="arithmatex">\(\frac{1}{3}\approx0.33333\)</span>.</p>
-<p>```python
-import numpy as np
+<p>```python 
+import numpy as np 
 import matplotlib.pyplot as plt</p>
 <p>def gaussxw(N):
     x, w = np.polynomial.legendre.leggauss(N) # Calcular los pesos y los puntos
@@ -360,14 +360,15 @@ import matplotlib.pyplot as plt</p>
     x, w = gaussxw(N) # Obtener los pesos y puntos originales</p>
 <pre><code>xEsc, wEsc = gaussxwab(limInf, limSup, x, w) # Escalarlos al intervalo [0, 1]
 
-resultado = np.sum(wEsc * f(xEsc)) #
+resultado = np.sum(wEsc * f(xEsc)) # Se calcula el valor de la integral mediante la sumatoria de productos segun N
 
 return resultado
 </code></pre>
+<h1 id="anadimos-los-valores-de-los-limites-y-la-cantidad-de-puntos-que-se-van-a-utilizar">Añadimos los valores de los limites y la cantidad de puntos que se van a utilizar</h1>
 <p>limInf = 0 
 limSup = 1
-numN = np.arange(1, 11)</p>
-<p>resInt = [calInt(n, limInf, limSup) for n in numN] </p>
+numN = 10 </p>
+<p>resInt = calInt(numN, limInf, limSup) </p>
 <p>print (f"El valor aproximado de la integral es: {resInt}")</p>
 
 
