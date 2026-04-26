@@ -293,6 +293,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#consideraciones-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideraciones adicionales
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -392,6 +403,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#consideraciones-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consideraciones adicionales
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -410,14 +432,14 @@
 
 
 <h1 id="explicacion-matematica">Explicación Matemática</h1>
-<p>La \textbf{cadratura Gaussiana} es un metodo que busca la máxima precisión utilizando la menor cantidad de puntos de evaluacion posible. A diferencia de otros métodos que usan puntos equiespaciados, la cuadratura Gaussiana eligre estratégicamente los puntos de muestreo para minimizar el error.</p>
+<p>La cadratura Gaussiana es un metodo que busca la máxima precisión utilizando la menor cantidad de puntos de evaluacion posible. A diferencia de otros métodos que usan puntos equiespaciados, la cuadratura Gaussiana eligre estratégicamente los puntos de muestreo para minimizar el error.</p>
 <h2 id="en-que-consiste">¿En qué consiste?</h2>
 <p>El método aproxima el valor de una integral definida mediante una suma finita de la siguiente forma: </p>
 <div class="arithmatex">\[\int_{a}^{b}{f(x)dx}\approx\sum_{k=1}^{N}{w_{k}f(x_{k})}\]</div>
-<p>Si tomamos el ejemplo de una cuadratura en el intervalo estándar [-1,1], los puntos de muestra <span class="arithmatex">\(x_{k}\)</span> son las raíces del polinomio de Legendre de grado N.
-Los pesos <span class="arithmatex">\(w_{k}\)</span>, por su parte, se calculan mediante la derivada de dichos polinomios. 
-Esto es lo que particularmente permite que el método sea exacto para cualquier polinomio de grado <span class="arithmatex">\(2N-1\)</span> o menor. </p>
-<p>Para el caso especifico del presente trabajo, como el intervalo de integración se encuentra entre [0,<span class="arithmatex">\([0, \pi]\)</span>], se debe aplicar una transformación lineal para poder mapear los puntos a utilizar y reescalar los pesos.</p>
+<p>Si tomamos el ejemplo de una cuadratura en el intervalo estándar <span class="arithmatex">\([-1,1]\)</span>, los puntos de muestra <span class="arithmatex">\(x_{k}\)</span> son las raíces del polinomio de Legendre de grado N.
+Los pesos <span class="arithmatex">\(w_{k}\)</span>, por su parte, se calculan mediante la derivada de dichos polinomios. Esto es lo que particularmente permite que el método sea exacto para cualquier polinomio de grado <span class="arithmatex">\(2N-1\)</span> o menor. </p>
+<h2 id="consideraciones-adicionales">Consideraciones adicionales</h2>
+<p>Para el caso especifico del presente trabajo, como el intervalo de integración se encuentra entre <span class="arithmatex">\([0, \pi]\)</span>, se debe aplicar una transformación lineal para poder mapear los puntos a utilizar y reescalar los pesos.</p>
 
 
 
