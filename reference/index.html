@@ -21,7 +21,7 @@
     
     
       
-        <title>Refeerencia - Tarea 2 - Samuel Díaz Estrada</title>
+        <title>Referencia - Tarea 2 - Samuel Díaz Estrada</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#funciones-principales" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Refeerencia
+              Referencia
             
           </span>
         </div>
@@ -276,6 +281,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -284,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Refeerencia
+    Referencia
   
 
     
@@ -293,6 +318,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gaussxwn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gaussxw(N)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussxwabliminf-limsup-x-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gaussxwab(limInf, limSup, x, w)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -315,6 +381,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gaussxwn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gaussxw(N)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussxwabliminf-limsup-x-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gaussxwab(limInf, limSup, x, w)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -331,20 +429,81 @@
 
 
 
-  <h1>Refeerencia</h1>
+<h1 id="funciones-principales">Funciones principales</h1>
+<h2 id="gaussxwn">gaussxw(N)</h2>
+<p>Calcula los nodos y los pesos de integración en el intervalo estándar <span class="arithmatex">\([-1,1]\)</span>:</p>
+<pre><code class="language-python">def calInt(N, limInf, limSup):
 
-<p>def calInt(N, limInf, limSup):
-    """
-    Calcula la integral de sin(x^2) usando cuadratura Gaussiana.</p>
-<pre><code>Args:
-    N (int): Número de puntos de evaluación.
-    limInf (float): Límite inferior de integración.
-    limSup (float): Límite superior de integración.
+    &quot;&quot;&quot;
+    Calcula los pesos y los puntos originales utilizando la librería numpy.
 
-Returns:
-    float: Valor aproximado de la integral.
-"""
-# ... tu código ...
+    Examples:
+        # Obtener 10 puntos y pesos para el intervalo estándar [-1, 1]
+        &gt;&gt;&gt; x, w = gaussxw(10)
+
+        &gt;&gt;&gt; print(x[0]) # Imprime el primer nodo
+        -0.9739065285171717
+
+    Args:
+        N (int): Número de puntos de integración (grado del polinomio de Legendre).
+
+    Returns:
+        x (array): Nodos de integración en el intervalo [-1,1].
+        w (array): Pesos de integración 
+    &quot;&quot;&quot;
+</code></pre>
+<h2 id="gaussxwabliminf-limsup-x-w">gaussxwab(limInf, limSup, x, w)</h2>
+<p>Aplica la transformación lineal necesaria para escalar los puntos y los pesos desde el intervalo <span class="arithmatex">\([-1,1]\)</span> al intervalo deseado <span class="arithmatex">\([0,\pi]\)</span></p>
+<pre><code class="language-python">
+def gaussxwab(limInf, limSup, x, w):
+
+    &quot;&quot;&quot;
+    Escala los pesos y puntos al intervalo [limInf, limSup].
+
+    Examples:
+        # Primero obtenemos los puntos base
+        &gt;&gt;&gt; x_base, w_base = gaussxw(20)
+
+        # Luego los escalamos al intervalo de 0 a Pi
+        &gt;&gt;&gt; x_esc, w_esc = gaussxwab(0, np.pi, x_base, w_base)
+
+    Args:
+        limInf (float): Límite inferior de integración.
+        limSup (float): Límite superior de integración.
+        x (array): Puntos originales en el intervalo [-1, 1].
+        w (array): Pesos originales en el intervalo [-1, 1].
+
+    Returns:
+        x_esc (array): Puntos escalados al nuevo intervalo.
+        w_esc (array): Pesos reescalados para el nuevo intervalo.
+    &quot;&quot;&quot;
+
+## calInt(N, limInf, limSup)
+
+Calcula la aproximación numérica de la integral de $sin(x^2)$
+
+```python
+
+def calInt(N, limInf, limSup):
+
+    &quot;&quot;&quot;
+    Obtiene el valor aproximado de la integral definida mediante la sumatoria gaussiana.
+
+    Examples: 
+        # Calcular la integral de sin(x^2) de 0 a PI con 50 puntos
+        &gt;&gt;&gt; resultado = calInt(50, 0, np.pi)
+
+        &gt;&gt;&gt; print(f&quot;Resultado: {resultado}&quot;)
+        Resultado: 0.7726517126937147
+
+    Args:
+        N (int): Número de puntos de evaluación.
+        limInf (float): Límite inferior de integración.
+        limSup (float): Límite superior de integración.
+
+    Returns:
+        float: Valor aproximado de la integral.
+    &quot;&quot;&quot;
 </code></pre>
 
 
