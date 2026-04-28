@@ -355,6 +355,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#documentación.f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentación.calInt" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -413,6 +424,17 @@
     <span class="md-ellipsis">
       
         gaussxwab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentación.f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f
       
     </span>
   </a>
@@ -590,6 +612,65 @@ w (numpy.ndarray): Pesos de integración originales.
     <span class="n">xEsc</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">-</span> <span class="n">limInf</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">+</span> <span class="n">limInf</span><span class="p">)</span>
     <span class="n">wEsc</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">-</span> <span class="n">limInf</span><span class="p">)</span> <span class="o">*</span> <span class="n">w</span>
     <span class="k">return</span> <span class="n">xEsc</span><span class="p">,</span> <span class="n">wEsc</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="documentación.f" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">documentación</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Calcula el valor de la función f(x) = sin(x^2).</p>
+
+
+<details class="parameters:" open>
+  <summary>Parameters:</summary>
+  <pre><code>x (float or numpy.ndarray): Valor o arreglo de valores de entrada.
+</code></pre>
+</details>
+
+<details class="returns:" open>
+  <summary>Returns:</summary>
+  <pre><code>float or numpy.ndarray: El resultado de aplicar la función seno al cuadrado de x.
+</code></pre>
+</details>
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>documentación.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcula el valor de la función f(x) = sin(x^2).</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ----------</span>
+<span class="sd">        x (float or numpy.ndarray): Valor o arreglo de valores de entrada.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">        float or numpy.ndarray: El resultado de aplicar la función seno al cuadrado de x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
