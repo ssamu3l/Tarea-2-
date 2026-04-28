@@ -739,8 +739,8 @@
 
 <p><span class="doc-section-title">Examples:</span></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">gaussxw</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x_e</span><span class="p">,</span> <span class="n">w_e</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x_e</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xEsc</span><span class="p">,</span> <span class="n">wEsc</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">xEsc</span><span class="p">)</span>
 <span class="go">[0.21132487 0.78867513]</span>
 </code></pre></div>
 
@@ -801,8 +801,8 @@
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; x, w = gaussxw(2)</span>
-<span class="sd">    &gt;&gt;&gt; x_e, w_e = gaussxwab(0, 1, x, w)</span>
-<span class="sd">    &gt;&gt;&gt; print(x_e)</span>
+<span class="sd">    &gt;&gt;&gt; xEsc, wEsc = gaussxwab(0, 1, x, w)</span>
+<span class="sd">    &gt;&gt;&gt; print(xEsc)</span>
 <span class="sd">    [0.21132487 0.78867513]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">-</span> <span class="n">limInf</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">+</span> <span class="n">limInf</span><span class="p">),</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limSup</span> <span class="o">-</span> <span class="n">limInf</span><span class="p">)</span> <span class="o">*</span> <span class="n">w</span>
@@ -881,7 +881,7 @@
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">0.0</span>
 </code></pre></div>
 
@@ -923,7 +923,7 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; print(f(0))</span>
+<span class="sd">    &gt;&gt;&gt; print(f(3))</span>
 <span class="sd">    0.0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
