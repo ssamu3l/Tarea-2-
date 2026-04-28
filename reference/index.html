@@ -482,24 +482,35 @@
 
     <div class="doc doc-contents first">
 
-        <p>Calcula los pesos y los puntos de Gauss-Legendre.</p>
-<p>Examples:
+        <p>Calcula los pesos y los puntos de Gauss-Legendre.
+Examples:
     &gt;&gt;&gt; x, w = gaussxw(2)
     &gt;&gt;&gt; print(x)
     [-0.57735027  0.57735027]</p>
 
 
-<details class="parameters:" open>
-  <summary>Parameters:</summary>
-  <pre><code>N (int): Número de puntos de integración a calcular.
-</code></pre>
-</details>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>    tuple: Un par (x, w) que contiene los puntos y los pesos originales.</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-<details class="returns:" open>
-  <summary>Returns:</summary>
-  <pre><code>tuple: Un par (x, w) que contiene los puntos y los pesos originales.
-</code></pre>
-</details>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
@@ -520,21 +531,19 @@
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula los pesos y los puntos de Gauss-Legendre.</span>
-
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; x, w = gaussxw(2)</span>
 <span class="sd">        &gt;&gt;&gt; print(x)</span>
 <span class="sd">        [-0.57735027  0.57735027]</span>
 
-<span class="sd">    Parameters:</span>
+<span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">        N (int): Número de puntos de integración a calcular.</span>
 
-<span class="sd">    Returns:</span>
+<span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        tuple: Un par (x, w) que contiene los puntos y los pesos originales.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -560,24 +569,33 @@
         <p>Escala los puntos y pesos de integración al intervalo [a, b].</p>
 
 
-<details class="parameters:" open>
-  <summary>Parameters:</summary>
-  <pre><code>limInf (float): Límite inferior de la integral (a).
-limSup (float): Límite superior de la integral (b).
-x (numpy.ndarray): Puntos de integración originales en [-1, 1].
-w (numpy.ndarray): Pesos de integración originales.
-</code></pre>
-</details>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>    tuple: Un par (xEsc, wEsc) con los puntos y pesos escalados al intervalo deseado.</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-<details class="returns:" open>
-  <summary>Returns:</summary>
-  <pre><code>tuple: Un par (xEsc, wEsc) con los puntos y pesos escalados al intervalo deseado.
-</code></pre>
-</details>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
+<span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
@@ -593,19 +611,18 @@ w (numpy.ndarray): Pesos de integración originales.
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Escala los puntos y pesos de integración al intervalo [a, b].</span>
 
-<span class="sd">    Parameters:</span>
+<span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">        limInf (float): Límite inferior de la integral (a).</span>
 <span class="sd">        limSup (float): Límite superior de la integral (b).</span>
 <span class="sd">        x (numpy.ndarray): Puntos de integración originales en [-1, 1].</span>
 <span class="sd">        w (numpy.ndarray): Pesos de integración originales.</span>
 
-<span class="sd">    Returns:</span>
+<span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        tuple: Un par (xEsc, wEsc) con los puntos y pesos escalados al intervalo deseado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -632,21 +649,33 @@ w (numpy.ndarray): Pesos de integración originales.
         <p>Calcula el valor de la función f(x) = sin(x^2).</p>
 
 
-<details class="parameters:" open>
-  <summary>Parameters:</summary>
-  <pre><code>x (float or numpy.ndarray): Valor o arreglo de valores de entrada.
-</code></pre>
-</details>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>    float or numpy.ndarray: El resultado de aplicar la función seno al cuadrado de x.</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-<details class="returns:" open>
-  <summary>Returns:</summary>
-  <pre><code>float or numpy.ndarray: El resultado de aplicar la función seno al cuadrado de x.
-</code></pre>
-</details>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -657,16 +686,15 @@ w (numpy.ndarray): Pesos de integración originales.
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula el valor de la función f(x) = sin(x^2).</span>
 
-<span class="sd">    Parameters:</span>
+<span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">        x (float or numpy.ndarray): Valor o arreglo de valores de entrada.</span>
 
-<span class="sd">    Returns:</span>
+<span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        float or numpy.ndarray: El resultado de aplicar la función seno al cuadrado de x.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -691,23 +719,33 @@ w (numpy.ndarray): Pesos de integración originales.
         <p>Calcula la integral numérica de f(x) utilizando la cuadratura de Gauss-Legendre.</p>
 
 
-<details class="parameters:" open>
-  <summary>Parameters:</summary>
-  <pre><code>N (int): Número de puntos para la aproximación.
-limInf (float): Límite inferior de integración.
-limSup (float): Límite superior de integración.
-</code></pre>
-</details>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>    float: El valor aproximado de la integral definida.</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-<details class="returns:" open>
-  <summary>Returns:</summary>
-  <pre><code>float: El valor aproximado de la integral definida.
-</code></pre>
-</details>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">57</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
+<span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
@@ -729,18 +767,17 @@ limSup (float): Límite superior de integración.
 <span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calInt</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">):</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calInt</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula la integral numérica de f(x) utilizando la cuadratura de Gauss-Legendre.</span>
 
-<span class="sd">    Parameters:</span>
+<span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">        N (int): Número de puntos para la aproximación.</span>
 <span class="sd">        limInf (float): Límite inferior de integración.</span>
 <span class="sd">        limSup (float): Límite superior de integración.</span>
 
-<span class="sd">    Returns:</span>
+<span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        float: El valor aproximado de la integral definida.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
