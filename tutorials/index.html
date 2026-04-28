@@ -261,6 +261,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -277,6 +295,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-invocar-las-bibliotecas-necesarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1: Invocar las bibliotecas necesarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-generar-los-puntos-y-los-pesos-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2: Generar los puntos y los pesos base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-escalar-los-puntos-y-pesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3: Escalar los puntos y pesos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-definir-la-funcion-a-integrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4: Definir la función a integrar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-aproximar-la-integral-por-medio-de-una-suma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5: Aproximar la integral por medio de una suma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-6-ejecutar-el-codigo-y-obtener-los-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6: Ejecutar el código y obtener los resultados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -329,6 +432,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-invocar-las-bibliotecas-necesarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1: Invocar las bibliotecas necesarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-generar-los-puntos-y-los-pesos-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2: Generar los puntos y los pesos base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-escalar-los-puntos-y-pesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3: Escalar los puntos y pesos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-definir-la-funcion-a-integrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4: Definir la función a integrar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-aproximar-la-integral-por-medio-de-una-suma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5: Aproximar la integral por medio de una suma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-6-ejecutar-el-codigo-y-obtener-los-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6: Ejecutar el código y obtener los resultados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -348,29 +525,51 @@
 <p>Para calcular la integral de una funcion, utilizaremos el siguiente ejemplo: </p>
 <div class="arithmatex">\[\int_{0}^{1}{x^2}dx\]</div>
 <p>Cuyo valor teórico exacto es <span class="arithmatex">\(\frac{1}{3}\approx0.33333\)</span>.</p>
+<h3 id="paso-1-invocar-las-bibliotecas-necesarias">Paso 1: Invocar las bibliotecas necesarias</h3>
+<p>Como el problema que queremos resolver requiere de operaciones matemáticas coplejas invocamos las siguientes bibliotecas de python mediante el código: </p>
 <pre><code class="language-python">import numpy as np 
 import matplotlib.pyplot as plt
-
-def gaussxw(N):
-    x, w = np.polynomial.legendre.leggauss(N) # Calcular los pesos y los puntos
+</code></pre>
+<h3 id="paso-2-generar-los-puntos-y-los-pesos-base">Paso 2: Generar los puntos y los pesos base</h3>
+<p>Lo primero que necesitamos obtener son los puntos o nodos <span class="arithmatex">\((x_{i})\)</span> y pesos <span class="arithmatex">\((w_{i})\)</span> en el intervalo estándar de <span class="arithmatex">\([-1,1]\)</span>. Para ello creamos la función gaussxw mediante el código: </p>
+<pre><code class="language-python">def gaussxw(N):
+    # El siguiente comando calcula los pesos y puntos de los polinomios de Legendre de grado N.
+    x, w = np.polynomial.legendre.leggauss(N)
     return x, w
+</code></pre>
+<h3 id="paso-3-escalar-los-puntos-y-pesos">Paso 3: Escalar los puntos y pesos</h3>
+<p>Como la mayoría de las integrales no van desde el intervalo <span class="arithmatex">\([-1,1]\)</span>, es necesario mapear los puntos y los pesos al intervalo real <span class="arithmatex">\([a,b]\)</span> que ocupamos integrar. </p>
+<pre><code class="language-python">def gaussxwab(limInf, limSup, x, w):
+    # Acá se realiza la transformación lineal para mover los puntos de [-1,1] a [a,b]
+    xEsc = 0.5 * (limSup - limInf) * x + 0.5 * (limSup + limInf)
 
-def gaussxwab(limInf, limSup, x, w):
-    return 0.5 * (limSup - limInf) * x + 0.5 * (limSup + limInf), 0.5 * (limSup - limInf) * w # Escalar los pesos y puntos al intervalo [limInf, limSup]
+    # Acá se ajustan los pesos según el ancho del nuevo intervalo 
+    wEsc = 0.5 * (limSup - limInf) * w 
 
-def f(x):
-    return (x**2) # Obtener la funcion que se busca calcular
+    return xEsc, wEsc
+</code></pre>
+<h3 id="paso-4-definir-la-funcion-a-integrar">Paso 4: Definir la función a integrar</h3>
+<p>Acá se debe definir la función la cual debemos integrar. Como indicamos que para este ejemplo usaremos <span class="arithmatex">\(f(x) = x^2\)</span>, la definimos mediante el siguiente código:</p>
+<pre><code class="language-python">def f(x):
+    return (x**2) # De esta forma definimos la función que se busca calcular
+</code></pre>
+<h3 id="paso-5-aproximar-la-integral-por-medio-de-una-suma">Paso 5: Aproximar la integral por medio de una suma</h3>
+<p>Como estamos aplicando el método de cuadratura Gaussiana, debemos aproximar la integral mediante la suma de la función evaluada en los puntos y multiplicada por los pesos anteriormente escalados, para ello utilizamos lo siguiente: </p>
+<pre><code class="language-python">def calInt(N, limInf, limSup):
+    # Primero obtenemos los puntos y pesos originales
+    x, w = gaussxw(N)
 
-def calInt(N, limInf, limSup):
-    x, w = gaussxw(N) # Obtener los pesos y puntos originales
+    # Luego los ajustamos a nuetros límites [0,1]
+    xEsc, wEsc = gaussxwab(limInf, limSup, x, w) 
 
-    xEsc, wEsc = gaussxwab(limInf, limSup, x, w) # Escalarlos al intervalo [0, 1]
-
-    resultado = np.sum(wEsc * f(xEsc)) # Se calcula el valor de la integral mediante la sumatoria de productos segun N
+    # Realizmos la suma de los productos (f(x) * peso)
+    resultado = np.sum(wEsc * f(xEsc)) 
 
     return resultado
-
-limInf = 0 
+</code></pre>
+<h3 id="paso-6-ejecutar-el-codigo-y-obtener-los-resultados">Paso 6: Ejecutar el código y obtener los resultados</h3>
+<p>El ultimo paso consiste en definir los límites y el número de puntos <span class="arithmatex">\((N)\)</span>. Recordando que a mayor cantidad <span class="arithmatex">\(N\)</span>, mayor sera la presición del resultado. </p>
+<pre><code class="language-python">limInf = 0 
 limSup = 1
 numN = 10 
 
