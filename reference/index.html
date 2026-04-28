@@ -501,10 +501,11 @@
                 <code>N</code>
             </td>
             <td>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Número de puntos de integración a calcular.</p>
               </div>
             </td>
             <td>
@@ -525,12 +526,22 @@
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-                  <code>Un par (x, w) que contiene los nodos y los pesos en el intervalo [-1, 1].</code>
+<td><code>x</code></td>            <td>
+                  <code><span title="ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Los puntos en el intervalo [-1, 1].</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>w</code></td>            <td>
+                  <code><span title="ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Pesos asociados a cada punto.</p>
               </div>
             </td>
           </tr>
@@ -566,17 +577,25 @@
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula los pesos y los puntos de Gauss-Legendre originales.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    N (int): Número de puntos de integración a calcular.</span>
+<span class="sd">    N : int </span>
+<span class="sd">        Número de puntos de integración a calcular.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    tuple: Un par (x, w) que contiene los nodos y los pesos en el intervalo [-1, 1].</span>
+<span class="sd">    x : ndarray</span>
+<span class="sd">        Los puntos en el intervalo [-1, 1].</span>
+<span class="sd">    w : ndarray</span>
+<span class="sd">        Pesos asociados a cada punto.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -622,10 +641,11 @@
                 <code>limInf</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Límite inferior de la integral (a).</p>
               </div>
             </td>
             <td>
@@ -637,10 +657,11 @@
                 <code>limSup</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Límite superior de la integral (b).</p>
               </div>
             </td>
             <td>
@@ -652,10 +673,11 @@
                 <code>x</code>
             </td>
             <td>
+                  <code><span title="ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Puntos de integración originales</p>
               </div>
             </td>
             <td>
@@ -667,10 +689,11 @@
                 <code>w</code>
             </td>
             <td>
+                  <code><span title="ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Pesos de integración originales</p>
               </div>
             </td>
             <td>
@@ -691,12 +714,22 @@
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-                  <code>Un par (xEsc, wEsc) con los valores ajustados al nuevo intervalo.</code>
+<td><code>xEsc</code></td>            <td>
+                  <code><span title="ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Los puntos escalados al intervalo [a, b]</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>wEsc</code></td>            <td>
+                  <code><span title="ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Los pesos escalados al intervalo [a, b]</p>
               </div>
             </td>
           </tr>
@@ -714,11 +747,7 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
@@ -736,20 +765,38 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Escala los puntos y pesos de integración al intervalo deseado [a, b].</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    limInf (float): Límite inferior de la integral (a).</span>
-<span class="sd">    limSup (float): Límite superior de la integral (b).</span>
-<span class="sd">    x (numpy.ndarray): Puntos de integración originales obtenidos de gaussxw.</span>
-<span class="sd">    w (numpy.ndarray): Pesos de integración originales obtenidos de gaussxw.</span>
+<span class="sd">    limInf : float </span>
+<span class="sd">        Límite inferior de la integral (a).</span>
+<span class="sd">    limSup : float</span>
+<span class="sd">        Límite superior de la integral (b).</span>
+<span class="sd">    x : ndarray</span>
+<span class="sd">        Puntos de integración originales </span>
+<span class="sd">    w : ndarray </span>
+<span class="sd">        Pesos de integración originales </span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    tuple: Un par (xEsc, wEsc) con los valores ajustados al nuevo intervalo.</span>
+<span class="sd">    xEsc : ndarray</span>
+<span class="sd">        Los puntos escalados al intervalo [a, b]</span>
+<span class="sd">    wEsc : ndarray</span>
+<span class="sd">        Los pesos escalados al intervalo [a, b]</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -795,10 +842,11 @@
                 <code>x</code>
             </td>
             <td>
+                  <code><span title="float">float</span> or <span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Punto o puntos donde se evaluará la función.</p>
               </div>
             </td>
             <td>
@@ -820,11 +868,11 @@
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>float or numpy.ndarray: El valor de la función evaluada en x.</code>
+                  <code><span title="float">float</span> or <span title="ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>El valor de la función evaluada en x.</p>
               </div>
             </td>
           </tr>
@@ -840,34 +888,38 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Define la función matemática a integrar: f(x) = sin(x^2).</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    x (float o numpy.ndarray): Punto o puntos donde se evaluará la función.</span>
+<span class="sd">    x : float or numpy.ndarray</span>
+<span class="sd">        Punto o puntos donde se evaluará la función.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float or numpy.ndarray: El valor de la función evaluada en x.</span>
+<span class="sd">    float or ndarray </span>
+<span class="sd">        El valor de la función evaluada en x.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -911,10 +963,11 @@
                 <code>N</code>
             </td>
             <td>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Número de puntos de colocación para la aproximación.</p>
               </div>
             </td>
             <td>
@@ -926,10 +979,11 @@
                 <code>limInf</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Límite inferior de la integral (a).</p>
               </div>
             </td>
             <td>
@@ -941,10 +995,11 @@
                 <code>limSup</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Límite superior de la integral (b).</p>
               </div>
             </td>
             <td>
@@ -959,18 +1014,18 @@
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>float</code></td>            <td>
-                  <code>Resultado final de la aproximación de la integral definida.</code>
+            <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                
+                <p>Resultado final de la aproximación de la integral definida.</p>
               </div>
             </td>
           </tr>
@@ -988,43 +1043,51 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>documentación.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calInt</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calInt</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">limInf</span><span class="p">,</span> <span class="n">limSup</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula la integral numérica de f(x) mediante la cuadratura de Gauss-Legendre.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    N (int): Número de puntos de colocación para la aproximación.</span>
-<span class="sd">    limInf (float): Límite inferior de la integral (a).</span>
-<span class="sd">    limSup (float): Límite superior de la integral (b).</span>
+<span class="sd">    N : int </span>
+<span class="sd">        Número de puntos de colocación para la aproximación.</span>
+<span class="sd">    limInf : float</span>
+<span class="sd">        Límite inferior de la integral (a).</span>
+<span class="sd">    limSup : float</span>
+<span class="sd">        Límite superior de la integral (b).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    float: Resultado final de la aproximación de la integral definida.</span>
+<span class="sd">    float </span>
+<span class="sd">        Resultado final de la aproximación de la integral definida.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
